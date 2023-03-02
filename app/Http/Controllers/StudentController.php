@@ -8,6 +8,10 @@ class StudentController extends Controller
 {
     public function create()
     {
-            return view('student.form');
+
+        $data = [
+            'scope' => 'create'
+        ]
+        return view('student.form')->with($data);
     }
 }
