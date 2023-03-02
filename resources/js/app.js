@@ -15,10 +15,13 @@ import { createApp } from "vue";
 
 const app = createApp({});
 
-import ExampleComponent from "./components/ExampleComponent.vue";
-app.component("example-component", /ExampleComponent);
-import StudentFormComponent from "./components/student/StudentFormComponent.vue"
-app.component("student-form-component", /StudentFormComponent);
+// import ExampleComponent from "./components/ExampleComponent.vue";
+// app.component(
+//     "example-component",
+//     require("./components/ExampleComponent.vue").default
+// );
+// import StudentFormComponent from "./components/student/StudentFormComponent.vue";
+// app.component("student-form-component", /StudentFormComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -28,9 +31,17 @@ app.component("student-form-component", /StudentFormComponent);
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// Object.entries(import.meta.glob('./**/*.vue', { eager: true })).forEach(([path, definition]) => {
-//     app.component(path.split('/').pop().replace(/\.\w+$/, ''), definition.default);
-// });
+Object.entries(import.meta.glob("./**/*.vue", { eager: true })).forEach(
+    ([path, definition]) => {
+        app.component(
+            path
+                .split("/")
+                .pop()
+                .replace(/\.\w+$/, ""),
+            definition.default
+        );
+    }
+);
 
 /**
  * Finally, we will attach the application instance to a HTML element with

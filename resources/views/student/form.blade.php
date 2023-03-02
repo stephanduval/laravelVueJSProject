@@ -8,8 +8,8 @@
         :id="{{ $id ?? 0 }}"
 
         >
-
         </student-form-component>
+
     </div>
 
  @endsection()

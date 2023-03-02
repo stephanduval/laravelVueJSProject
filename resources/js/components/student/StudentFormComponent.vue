@@ -5,10 +5,10 @@
             <el-page-header @back="goBack" :content="'Category - ${scope}'">
             </el-page-header>
     <span>Card name</span>
+        </div>
 </el-card>
-    </div>
-    <div>
-        form
+
+        form!!
     </div>
 </template>
 
@@ -16,7 +16,7 @@
     export default {
         name:'student-form-component',
         mounted() {
-            console.log('Component mounted.')
+            console.log('Student Form Component mounted')
         }
     }
 </script>
